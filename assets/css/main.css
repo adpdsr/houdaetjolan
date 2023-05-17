@@ -60,7 +60,7 @@ p {
 }
 
 .text-large {
-    font-size: 2.3rem;
+    font-size: 2.7rem;
 }
 
 .text-link {
@@ -100,7 +100,7 @@ p {
 
 .text-container {
     padding-top: 100px;
-    margin-left: 45px;
+    margin-left: 38px;
     animation: fadeIn 0.75s;
 }
 
@@ -124,16 +124,25 @@ p {
     display: none;
 }
 
-.scroll-down {
-    width: 100%;
-    text-align: center;
+.pagination img {
+    position: fixed;
+    margin: 10px;
+    z-index: 9;
+    top: 82%;
 }
 
-.scroll-down img {
-    position: absolute;
-    margin: 10px;
-    bottom: 4%;
-    z-index: 9;
+.pagination #nav-prev {
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    left: 50%;
+    margin-left: -70px;
+}
+
+.pagination #nav-next {
+    transform: translate(-50%, -50%);
+    transform: rotate(-90deg);
+    right: 50%;
+    margin-right: -107px;
 }
 
 @media screen and (max-width: 768px) {
@@ -164,6 +173,10 @@ p {
         margin-bottom: 30px;
     }
 
+    .text-large {
+        margin-top: 15px !important;
+    }
+
     .plants {
         display: none;
     }
@@ -176,10 +189,17 @@ p {
         height: 300px;
     }
 
-    .scroll-down img {
-        width: 20px;
-        margin-left: 12px;
-        height: auto;
+    .pagination img {
+        top: 75%;
+        width: 25px;
+    }
+
+    .pagination #nav-prev {
+        margin-left: -50px;
+    }
+
+    .pagination #nav-next {
+        margin-right: -87px;
     }
 }
 
@@ -211,7 +231,7 @@ p {
     }
     
     .text-large {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     .scrollable-content {
@@ -220,6 +240,19 @@ p {
 
     .scrollable-content-small {
         height: 260px;
+    }
+
+    .pagination img {
+        top: 71%;
+        width: 22px;
+    }
+
+    .pagination #nav-prev {
+        margin-left: -30px;
+    }
+
+    .pagination #nav-next {
+        margin-right: -67px;
     }
 }
 
@@ -269,8 +302,9 @@ p {
 .mt-15 { margin-top: 15%;  }
 .mt-25 { margin-top: 25%;  }
 .mt-30 { margin-top: 30%;  }
+.mt-sm { margin-top: 10px; }
 
-.ml-10 { margin-left: 10%; }
+.ml-8 { margin-left: 8%; }
 
 .underlined {
     text-decoration: underline;
@@ -283,6 +317,7 @@ p {
 
 #logo {
     width: 70%;
+    margin-left: 10px;
 }
 
 svg {
