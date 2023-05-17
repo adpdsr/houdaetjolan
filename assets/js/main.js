@@ -2,7 +2,7 @@ window.onload = function() {
     
     count = 1;
 
-    lastSection = document.getElementById("section-12");
+    lastSection = document.getElementById("section-10");
     
     /* HANDLE SWIPE */
 
@@ -34,9 +34,13 @@ window.onload = function() {
         }
     }
 
+    // pagination events
+    document.getElementById('nav-prev').addEventListener('click', prevSlide);
+    document.getElementById('nav-next').addEventListener('click', nextSlide);
+
     // go next section
     function nextSlide() {
-        if (count < 12) {
+        if (count < 10) {
             toggleVisibility(
                 document.getElementById("section-" + count),
                 document.getElementById("section-" + (count + 1 ))
@@ -51,6 +55,8 @@ window.onload = function() {
             showDay();
             count = 1;
         }
+
+        collapseMenu();
     }
 
     // go prev slide
@@ -61,7 +67,7 @@ window.onload = function() {
                 lastSection
             );
             showNight();
-            count = 12;
+            count = 10;
         } else if (count == 2) {
             toggleVisibility(
                 document.getElementById("section-" + count),
@@ -76,11 +82,11 @@ window.onload = function() {
             );
             count--;
         }
+
+        collapseMenu();
     }
     
-    // HANDLE SCROLL BUTTON CLICK
-
-    document.getElementById('scroll-down').addEventListener('click', changeSlide);
+    // HANDLE MENU CLICKS
 
     checkbox = document.getElementById("checkbox");
 
@@ -95,9 +101,6 @@ window.onload = function() {
             checkbox.checked = true;
         }
     })
-
-    
-    // HANDLE MENU CLICKS
 
     // register click event for every menu items
     menuItems = document.querySelectorAll(".menu-items a");
@@ -120,12 +123,16 @@ window.onload = function() {
             );
 
             // collapse menu after changing section
-            document.getElementById("menu").style.transform = "translate(-150%)";
-            document.getElementById("checkbox").checked = false;
+            collapseMenu();
 
             count = Number(target);
 
         });
+    }
+
+    function collapseMenu() {
+        document.getElementById("menu").style.transform = "translate(-150%)";
+        checkbox.checked = false;
     }
 
     function changeSlide() {
@@ -134,7 +141,7 @@ window.onload = function() {
             showNight();
         }
 
-        if (count < 12) {
+        if (count < 10) {
             toggleVisibility(
                 document.getElementById("section-" + count),
                 document.getElementById("section-" + (count + 1 ))
@@ -142,7 +149,7 @@ window.onload = function() {
             count++;
         } else {
             toggleVisibility(
-                document.getElementById("section-12"),
+                lastSection,
                 document.getElementById("section-1")
             );
             count = 1;
@@ -158,13 +165,15 @@ window.onload = function() {
 
     function showDay() {
         document.getElementById("window").style.backgroundImage = "url('assets/img/fenetre.svg')";
-        document.getElementById("scroll-down").src = "assets/img/scroll-down-arrow.svg";
+        document.getElementById("nav-prev").src = "assets/img/scroll-down-arrow.svg";
+        document.getElementById("nav-next").src = "assets/img/scroll-down-arrow.svg";
     }
 
     function showNight() {
         if (document.getElementById("window").style.backgroundImage.slice(4, -1).replace(/"/g, "") != "assets/img/fenetre-nuit.svg") {
             document.getElementById("window").style.backgroundImage = "url('assets/img/fenetre-nuit.svg')";
-            document.getElementById("scroll-down").src = "assets/img/scroll-down-arrow-white.svg";
+            document.getElementById("nav-prev").src = "assets/img/scroll-down-arrow-white.svg";
+            document.getElementById("nav-next").src = "assets/img/scroll-down-arrow-white.svg";
         }
     }
 
