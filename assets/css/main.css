@@ -100,7 +100,7 @@ p {
 
 .text-container {
     padding-top: 100px;
-    margin-left: 38px;
+    margin-left: 40px;
     animation: fadeIn 0.75s;
 }
 
@@ -127,8 +127,8 @@ p {
 .pagination img {
     position: fixed;
     margin: 10px;
+    bottom: 25px;
     z-index: 9;
-    top: 82%;
 }
 
 .pagination #nav-prev {
@@ -142,7 +142,7 @@ p {
     transform: translate(-50%, -50%);
     transform: rotate(-90deg);
     right: 50%;
-    margin-right: -107px;
+    margin-right: -110px;
 }
 
 @media screen and (max-width: 768px) {
@@ -190,8 +190,8 @@ p {
     }
 
     .pagination img {
-        top: 75%;
         width: 25px;
+        bottom: 20px;
     }
 
     .pagination #nav-prev {
@@ -199,7 +199,7 @@ p {
     }
 
     .pagination #nav-next {
-        margin-right: -87px;
+        margin-right: -89px;
     }
 }
 
@@ -243,7 +243,6 @@ p {
     }
 
     .pagination img {
-        top: 71%;
         width: 22px;
     }
 
@@ -299,6 +298,7 @@ p {
 
 .mt-0  { margin-top: 0;    }
 .mt-5  { margin-top: 5%;   }
+.mt-10 { margin-top: 10%;  }
 .mt-15 { margin-top: 15%;  }
 .mt-25 { margin-top: 25%;  }
 .mt-30 { margin-top: 30%;  }
