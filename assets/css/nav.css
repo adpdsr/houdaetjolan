@@ -98,6 +98,7 @@
 
 .navbar .menu-sub-item a {
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .navbar .menu-items {
